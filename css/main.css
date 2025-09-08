@@ -1,0 +1,452 @@
+/* Sacred Typography & Colors */
+:root {
+    --sacred-gold: #FFD700;
+    --deep-purple: #4A148C;
+    --cosmic-blue: #1A237E;
+    --heart-pink: #E91E63;
+    --wisdom-green: #00897B;
+    --pure-white: #FFFFFF;
+    --soft-black: #212121;
+    --harmony-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --consciousness-gradient: radial-gradient(circle at center, rgba(255,215,0,0.1) 0%, transparent 70%);
+    --phi: 1.618; /* Golden ratio */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    line-height: var(--phi);
+    color: var(--soft-black);
+    background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: var(--harmony-gradient);
+    overflow: hidden;
+}
+
+.consciousness-field {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--consciousness-gradient);
+    animation: breathe 8s ease-in-out infinite;
+}
+
+@keyframes breathe {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.1); opacity: 0.6; }
+}
+
+.hero-content {
+    text-align: center;
+    color: var(--pure-white);
+    z-index: 10;
+    padding: 2rem;
+    max-width: 800px;
+}
+
+.sacred-title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 30px rgba(255,215,0,0.5);
+    animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 30px rgba(255,215,0,0.5); }
+    50% { text-shadow: 0 0 50px rgba(255,215,0,0.8); }
+}
+
+.sacred-subtitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    opacity: 0.95;
+}
+
+.invitation {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+.covenant-notice {
+    background: rgba(255,255,255,0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+    backdrop-filter: blur(10px);
+}
+
+.creators {
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.btn-primary, .btn-secondary, .btn-tertiary {
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: var(--sacred-gold);
+    color: var(--soft-black);
+    box-shadow: 0 4px 15px rgba(255,215,0,0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(255,215,0,0.6);
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,0.2);
+    color: var(--pure-white);
+    border: 2px solid var(--pure-white);
+}
+
+.btn-secondary:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.btn-tertiary {
+    background: transparent;
+    color: var(--pure-white);
+    text-decoration: underline;
+}
+
+/* Sections */
+.sacred-section, .harmonies-section, .journey-section, .hearths-section, .support-section {
+    padding: 5rem 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--deep-purple);
+}
+
+.section-intro {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 3rem;
+    font-style: italic;
+}
+
+/* Meta Principle */
+#core-message {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.meta-principle {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--cosmic-blue);
+    font-weight: bold;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: rgba(255,255,255,0.8);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.highlight {
+    color: var(--heart-pink);
+    font-weight: bold;
+}
+
+/* Harmonies Grid */
+.harmonies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.harmony-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.harmony-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--harmony-gradient);
+}
+
+.harmony-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+.harmony-number {
+    width: 50px;
+    height: 50px;
+    background: var(--harmony-gradient);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.harmony-card h3 {
+    color: var(--deep-purple);
+    margin-bottom: 0.5rem;
+}
+
+.harmony-essence {
+    color: var(--wisdom-green);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.learn-more {
+    color: var(--cosmic-blue);
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: color 0.3s ease;
+}
+
+.learn-more:hover {
+    color: var(--heart-pink);
+}
+
+/* Journey Paths */
+.paths-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.path-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.path-card h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--cosmic-blue);
+}
+
+.path-card ul {
+    list-style: none;
+    margin: 1.5rem 0;
+}
+
+.path-card li {
+    padding: 0.5rem 0;
+    color: #666;
+}
+
+.btn-path {
+    background: var(--harmony-gradient);
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-path:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102,126,234,0.4);
+}
+
+/* Hearths Section */
+#resonant-hearths {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+
+.hearth-signup {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    margin: 2rem 0;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.signup-form {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.signup-form input {
+    padding: 1rem 2rem;
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    min-width: 300px;
+}
+
+.signup-form button {
+    padding: 1rem 3rem;
+    background: var(--sacred-gold);
+    color: var(--soft-black);
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.signup-form button:hover {
+    background: #FFC700;
+    transform: translateY(-2px);
+}
+
+.privacy-note {
+    color: #666;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* Support Section */
+#support {
+    background: var(--deep-purple);
+    color: white;
+    text-align: center;
+}
+
+#support h2 {
+    color: white;
+}
+
+.support-message {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.support-options {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+.btn-support {
+    background: var(--sacred-gold);
+    color: var(--soft-black);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-support:hover {
+    background: #FFC700;
+    transform: translateY(-2px);
+}
+
+.dedication {
+    margin-top: 3rem;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Footer */
+footer {
+    background: var(--soft-black);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.footer-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--sacred-gold);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sacred-title {
+        font-size: 2.5rem;
+    }
+    
+    .sacred-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .harmonies-grid,
+    .paths-grid {
+        grid-template-columns: 1fr;
+    }
+}
