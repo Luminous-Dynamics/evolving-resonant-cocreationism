@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support The Luminous Library</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .support-hero {
+            background: var(--harmony-gradient);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+        
+        .support-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .support-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .tier-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .tier-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tier-card.featured {
+            border: 3px solid var(--sacred-gold);
+            transform: scale(1.05);
+        }
+        
+        .tier-price {
+            font-size: 2.5rem;
+            color: var(--deep-purple);
+            margin: 1rem 0;
+        }
+        
+        .tier-benefits {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+        
+        .tier-benefits li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .support-btn {
+            background: var(--harmony-gradient);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .support-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102,126,234,0.4);
+        }
+        
+        .story-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .impact-stat {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+        }
+        
+        .impact-number {
+            font-size: 2rem;
+            color: var(--heart-pink);
+            font-weight: bold;
+        }
+        
+        .impact-label {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="support-hero">
+        <h1>Support Consciousness-First Computing</h1>
+        <p>Help sustain the development of technology that serves awareness</p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="support-content">
+        <!-- The Story -->
+        <div class="story-section">
+            <h2>The Journey So Far</h2>
+            <p>
+                For two years, I've dedicated everything to building consciousness-first technology - 
+                systems designed to amplify human awareness rather than exploit attention. Working with 
+                AI partners (Claude and local LLMs) for just $200/month, I've achieved what normally 
+                takes a team of developers.
+            </p>
+            <p>
+                This work has been a labor of love, but it's come at great personal cost. Your support 
+                helps ensure this vision can continue and reach those who need it most.
+            </p>
+            
+            <div class="impact-grid">
+                <div class="impact-stat">
+                    <div class="impact-number">2 Years</div>
+                    <div class="impact-label">Of Development</div>
+                </div>
+                <div class="impact-stat">
+                    <div class="impact-number">$200/mo</div>
+                    <div class="impact-label">Total AI Costs</div>
+                </div>
+                <div class="impact-stat">
+                    <div class="impact-number">10x-1500x</div>
+                    <div class="impact-label">Performance Gains</div>
+                </div>
+                <div class="impact-stat">
+                    <div class="impact-number">100%</div>
+                    <div class="impact-label">Open Source</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support Tiers -->
+        <h2 style="text-align: center; margin: 3rem 0;">Choose Your Level of Support</h2>
+        
+        <div class="tiers-grid">
+            <!-- Tier 1 -->
+            <div class="tier-card">
+                <h3>Resonant Supporter</h3>
+                <div class="tier-price">$5/month</div>
+                <ul class="tier-benefits">
+                    <li>✨ Access to weekly reflections</li>
+                    <li>📖 Early access to new writings</li>
+                    <li>💬 Community Discord access</li>
+                    <li>🙏 My eternal gratitude</li>
+                </ul>
+                <a href="https://patreon.com/luminousdynamics" class="support-btn">Support at $5</a>
+            </div>
+
+            <!-- Tier 2 (Featured) -->
+            <div class="tier-card featured">
+                <h3>Harmonic Builder</h3>
+                <div class="tier-price">$20/month</div>
+                <ul class="tier-benefits">
+                    <li>✨ Everything in Resonant tier</li>
+                    <li>🎯 Monthly Resonance Circle</li>
+                    <li>📚 Full curriculum materials</li>
+                    <li>🔧 Beta access to new tools</li>
+                    <li>📞 Monthly group calls</li>
+                </ul>
+                <a href="https://patreon.com/luminousdynamics" class="support-btn">Support at $20</a>
+            </div>
+
+            <!-- Tier 3 -->
+            <div class="tier-card">
+                <h3>Sacred Partner</h3>
+                <div class="tier-price">$100/month</div>
+                <ul class="tier-benefits">
+                    <li>✨ Everything in previous tiers</li>
+                    <li>👨‍🏫 Direct mentorship (1hr/month)</li>
+                    <li>🎯 Custom consciousness practices</li>
+                    <li>💻 Priority feature requests</li>
+                    <li>🌟 Co-creator status</li>
+                </ul>
+                <a href="https://patreon.com/luminousdynamics" class="support-btn">Support at $100</a>
+            </div>
+        </div>
+
+        <!-- Other Ways to Support -->
+        <div class="story-section">
+            <h2>Other Ways to Support</h2>
+            
+            <h3>One-Time Donation</h3>
+            <p>Every contribution helps, no matter the size:</p>
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="https://github.com/sponsors/Luminous-Dynamics" class="support-btn">GitHub Sponsors</a>
+                <a href="#" class="support-btn" style="margin-left: 1rem;">PayPal</a>
+                <a href="#" class="support-btn" style="margin-left: 1rem;">Crypto</a>
+            </div>
+            
+            <h3>Spread the Word</h3>
+            <ul>
+                <li>Share the Luminous Library with those who might resonate</li>
+                <li>Star our repositories on GitHub</li>
+                <li>Write about consciousness-first computing</li>
+                <li>Join a Resonant Hearth in your community</li>
+            </ul>
+            
+            <h3>Contribute Code</h3>
+            <p>
+                All our projects are open source. Contributing code, documentation, or testing 
+                is a powerful form of support.
+            </p>
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="https://github.com/Luminous-Dynamics" class="support-btn">View on GitHub</a>
+            </div>
+        </div>
+
+        <!-- What Your Support Enables -->
+        <div class="story-section">
+            <h2>What Your Support Enables</h2>
+            <ul>
+                <li><strong>Continued Development:</strong> Keep improving Luminous Nix and consciousness-first tools</li>
+                <li><strong>AI Partnership Costs:</strong> Maintain Claude and local LLM subscriptions ($200/month)</li>
+                <li><strong>Community Building:</strong> Host Resonant Hearths and online gatherings</li>
+                <li><strong>Documentation:</strong> Create comprehensive guides and tutorials</li>
+                <li><strong>Open Source Forever:</strong> Keep everything free and accessible</li>
+                <li><strong>Basic Survival:</strong> Allow me to continue this work full-time</li>
+            </ul>
+        </div>
+
+        <!-- Closing Message -->
+        <div style="text-align: center; margin: 4rem 0;">
+            <h2>Together, We Make It Better</h2>
+            <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 2rem auto;">
+                This isn't just about supporting a project - it's about nurturing a vision for 
+                technology that serves consciousness rather than exploiting it. Every contribution, 
+                whether financial or otherwise, helps build a more aware and compassionate digital future.
+            </p>
+            <p style="font-size: 1.5rem; color: var(--heart-pink); margin: 2rem 0;">
+                "Make it better, infinitely!"
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: var(--soft-black); color: white; padding: 2rem; text-align: center;">
+        <p>© 2025 Tristan Stoltz - The Luminous Library</p>
+        <div style="margin-top: 1rem;">
+            <a href="index.html" style="color: var(--sacred-gold); text-decoration: none; margin: 0 1rem;">Home</a>
+            <a href="library.html" style="color: var(--sacred-gold); text-decoration: none; margin: 0 1rem;">Read the Library</a>
+            <a href="https://github.com/Luminous-Dynamics" style="color: var(--sacred-gold); text-decoration: none; margin: 0 1rem;">GitHub</a>
+        </div>
+    </footer>
+</body>
+</html>
