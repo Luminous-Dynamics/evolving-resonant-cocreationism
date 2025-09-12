@@ -197,9 +197,9 @@
             </p>
             
             <div class="support-options">
+                <a href="https://ko-fi.com/luminousdynamics" class="btn-support">Support on Ko-fi</a>
                 <a href="https://patreon.com/luminousdynamics" class="btn-support">Support on Patreon</a>
                 <a href="https://github.com/sponsors/Luminous-Dynamics" class="btn-support">GitHub Sponsors</a>
-                <a href="#" class="btn-support">One-Time Donation</a>
             </div>
 
             <p class="dedication">
@@ -224,5 +224,16 @@
 
     <script src="js/consciousness-field.js"></script>
     <script src="js/main.js"></script>
+    
+    <!-- Ko-fi Widget -->
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script>
+        kofiWidgetOverlay.draw('luminousdynamics', {
+            'type': 'floating-chat',
+            'floating-chat.donateButton.text': '💜',
+            'floating-chat.donateButton.background-color': '#8B4789',
+            'floating-chat.donateButton.text-color': '#fff'
+        });
+    </script>
 </body>
 </html>
