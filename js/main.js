@@ -55,50 +55,8 @@ if (hearthForm) {
     });
 }
 
-// Sacred Pause - Breathing Reminder
-let lastScrollTime = Date.now();
-let pauseReminder = null;
-
-window.addEventListener('scroll', () => {
-    lastScrollTime = Date.now();
-    
-    // Clear existing reminder
-    if (pauseReminder) {
-        clearTimeout(pauseReminder);
-    }
-    
-    // Set new reminder for 5 minutes of scrolling
-    pauseReminder = setTimeout(() => {
-        showSacredPause();
-    }, 5 * 60 * 1000); // 5 minutes
-});
-
-function showSacredPause() {
-    const pause = document.createElement('div');
-    pause.className = 'sacred-pause';
-    pause.innerHTML = `
-        <div class="pause-content">
-            <p>Sacred Pause</p>
-            <p class="pause-message">Take three conscious breaths</p>
-            <button onclick="this.parentElement.parentElement.remove()">Continue</button>
-        </div>
-    `;
-    pause.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10000;
-        animation: fadeIn 1s ease;
-    `;
-    
-    document.body.appendChild(pause);
-}
+// Sacred Pause functionality removed per user request
+// The philosophy flows without interruption
 
 // Particle Effect on Click (Consciousness Ripple)
 document.addEventListener('click', (e) => {
@@ -145,35 +103,6 @@ style.textContent = `
             left: calc(50% - 100px);
             top: calc(50% - 100px);
         }
-    }
-    
-    .pause-content {
-        background: white;
-        padding: 3rem;
-        border-radius: 20px;
-        text-align: center;
-    }
-    
-    .pause-content p:first-child {
-        font-size: 2rem;
-        color: #4A148C;
-        margin-bottom: 1rem;
-    }
-    
-    .pause-message {
-        font-size: 1.2rem;
-        color: #666;
-        margin-bottom: 2rem;
-    }
-    
-    .pause-content button {
-        padding: 1rem 2rem;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        border: none;
-        border-radius: 50px;
-        font-size: 1.1rem;
-        cursor: pointer;
     }
 `;
 document.head.appendChild(style);
