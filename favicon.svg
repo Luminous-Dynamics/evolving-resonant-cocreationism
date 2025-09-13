@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Sacred geometry favicon - Seven-pointed star representing the Seven Harmonies -->
+  <defs>
+    <linearGradient id="sacred-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B4789;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="15" fill="#1a0033" stroke="url(#sacred-gradient)" stroke-width="1"/>
+  
+  <!-- Seven-pointed star -->
+  <path d="M 16,4 L 18.5,11 L 26,9 L 22,15.5 L 28,20 L 20,21 L 19,28 L 16,22 L 13,28 L 12,21 L 4,20 L 10,15.5 L 6,9 L 13.5,11 Z" 
+        fill="url(#sacred-gradient)" 
+        opacity="0.9"/>
+  
+  <!-- Center point of coherence -->
+  <circle cx="16" cy="16" r="3" fill="#FFD700" opacity="1"/>
+</svg>

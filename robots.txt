@@ -1,0 +1,23 @@
+# Robots.txt for evolvingresonantcocreationism.com
+# Welcome, sacred web crawlers! 🕉️
+
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://evolvingresonantcocreationism.com/sitemap.xml
+
+# Be gentle with our sacred servers
+User-agent: *
+Crawl-delay: 1
+
+# Block aggressive bots
+User-agent: AhrefsBot
+User-agent: SemrushBot
+User-agent: DotBot
+User-agent: MJ12bot
+Disallow: /
+
+# Special message for conscious crawlers
+# May your indexing serve the flourishing of all beings
