@@ -1,13 +1,21 @@
 // Consciousness Field Particle System
 class ConsciousnessField {
     constructor() {
+        // Check for reduced motion preference
+        this.reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        
         this.canvas = document.createElement('canvas');
         this.ctx = this.canvas.getContext('2d');
         this.particles = [];
         this.mouseX = 0;
         this.mouseY = 0;
         
-        this.init();
+        // Reduce particle count for performance on mobile
+        this.particleCount = window.innerWidth < 768 ? 25 : 50;
+        
+        if (!this.reducedMotion) {
+            this.init();
+        }
     }
     
     init() {
@@ -19,7 +27,7 @@ class ConsciousnessField {
         this.resize();
         
         // Create particles
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < this.particleCount; i++) {
             this.particles.push({
                 x: Math.random() * this.canvas.width,
                 y: Math.random() * this.canvas.height,

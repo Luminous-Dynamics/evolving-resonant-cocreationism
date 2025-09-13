@@ -2,7 +2,7 @@
 :root {
     --sacred-gold: #FFD700;
     --deep-purple: #4A148C;
-    --cosmic-blue: #1A237E;
+    --cosmic-blue: #1A237E; /* Note: Use carefully on dark backgrounds */
     --heart-pink: #E91E63;
     --wisdom-green: #00897B;
     --pure-white: #FFFFFF;
@@ -448,5 +448,61 @@ footer {
     .harmonies-grid,
     .paths-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Enhanced Mobile Styles */
+@media (max-width: 768px) {
+    /* Better touch targets */
+    .btn-primary, .btn-secondary, .btn-tertiary, .btn-path, .btn-support {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Improved readability on mobile */
+    body {
+        font-size: 16px;
+    }
+    
+    .harmony-card, .path-card {
+        padding: 1.5rem;
+    }
+    
+    /* Stack buttons vertically on small screens */
+    .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .cta-buttons a {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+    
+    /* Improve form inputs on mobile */
+    .signup-form input {
+        min-width: 100%;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .harmony-card {
+        border: 2px solid #FFD700;
+    }
+    
+    .btn-primary, .btn-secondary {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Dark mode preferences */
+@media (prefers-color-scheme: dark) {
+    /* Site already has dark theme, but ensure consistency */
+    body {
+        background: linear-gradient(to bottom, #1a1a1a 0%, #000000 100%);
     }
 }

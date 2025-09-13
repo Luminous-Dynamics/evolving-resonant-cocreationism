@@ -13,11 +13,33 @@
     <meta property="og:url" content="https://evolvingresonantcocreationism.com">
     <meta property="og:type" content="website">
     
-    <link rel="stylesheet" href="css/main.css">
+    <!-- Performance Optimizations -->
+    <link rel="preload" href="css/main.css" as="style">
+    <link rel="preload" href="css/harmonies.css" as="style">
+    <link rel="preconnect" href="https://storage.ko-fi.com">
+        <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/harmonies.css">
 </head>
 <body>
-    <!-- Sacred Landing -->
+    <!-- Skip Navigation for Accessibility -->
+    <a href="#core-message" class="skip-nav">Skip to main content</a>
+    <style>
+        .skip-nav {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #FFD700;
+            color: #1a0033;
+            padding: 0.5rem 1rem;
+            z-index: 10000;
+            text-decoration: none;
+            border-radius: 0 0 5px 0;
+        }
+        .skip-nav:focus {
+            top: 0;
+        }
+    </style>
+        <!-- Sacred Landing -->
     <section id="landing" class="hero">
         <div class="consciousness-field"></div>
         <div class="hero-content">
@@ -225,7 +247,7 @@
     <script src="js/main.js"></script>
     
     <!-- Ko-fi Widget -->
-    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js" defer></script>
     <script>
         kofiWidgetOverlay.draw('luminousdynamics', {
             'type': 'floating-chat',
