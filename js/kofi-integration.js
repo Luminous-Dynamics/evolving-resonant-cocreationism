@@ -16,25 +16,51 @@ function initKofiWidget() {
     }
 }
 
+// Safe localStorage wrapper with error handling
+const safeStorage = {
+    getItem: (key) => {
+        try {
+            return localStorage.getItem(key);
+        } catch (e) {
+            console.warn('localStorage access failed:', e);
+            return null;
+        }
+    },
+    setItem: (key, value) => {
+        try {
+            localStorage.setItem(key, value);
+            return true;
+        } catch (e) {
+            console.warn('localStorage write failed:', e);
+            return false;
+        }
+    }
+};
+
 // Track Ko-fi Events
 function trackKofiEvent(action, label, value) {
-    // Track in localStorage for now (can add Google Analytics later)
-    const events = JSON.parse(localStorage.getItem('kofi_events') || '[]');
-    events.push({
-        action,
-        label,
-        value,
-        timestamp: new Date().toISOString()
-    });
-    localStorage.setItem('kofi_events', JSON.stringify(events));
-    
-    // If Google Analytics is present
-    if (typeof gtag !== 'undefined') {
-        gtag('event', action, {
-            'event_category': 'Ko-fi',
-            'event_label': label,
-            'value': value
+    try {
+        // Track in localStorage for now (can add Google Analytics later)
+        const eventsStr = safeStorage.getItem('kofi_events') || '[]';
+        const events = JSON.parse(eventsStr);
+        events.push({
+            action,
+            label,
+            value,
+            timestamp: new Date().toISOString()
         });
+        safeStorage.setItem('kofi_events', JSON.stringify(events));
+
+        // If Google Analytics is present
+        if (typeof gtag !== 'undefined') {
+            gtag('event', action, {
+                'event_category': 'Ko-fi',
+                'event_label': label,
+                'value': value
+            });
+        }
+    } catch (e) {
+        console.warn('Failed to track Ko-fi event:', e);
     }
 }
 
@@ -90,7 +116,7 @@ function addKofiButtons() {
 // Add supporter counter (uses localStorage for now)
 function displaySupporterCount() {
     // This would normally fetch from your backend
-    const supporterCount = localStorage.getItem('supporter_count') || '0';
+    const supporterCount = safeStorage.getItem('supporter_count') || '0';
     const elements = document.querySelectorAll('.supporter-count');
     elements.forEach(el => {
         el.textContent = supporterCount;
@@ -99,7 +125,7 @@ function displaySupporterCount() {
 
 // Thank you message for returning supporters
 function checkReturningSupporter() {
-    const isSupporter = localStorage.getItem('is_kofi_supporter');
+    const isSupporter = safeStorage.getItem('is_kofi_supporter');
     if (isSupporter === 'true') {
         // Show thank you message
         const thankYouBanner = document.createElement('div');
@@ -118,10 +144,16 @@ function checkReturningSupporter() {
         `;
         thankYouBanner.innerHTML = `
             <span>✨ Thank you for supporting consciousness-first computing! ✨</span>
-            <button onclick="this.parentElement.remove()" style="
-                background: none; border: none; color: white; 
-                margin-left: 20px; cursor: pointer; font-size: 18px;">×</button>
+            <button class="close-thank-you" style="
+                background: none; border: none; color: white;
+                margin-left: 20px; cursor: pointer; font-size: 18px;" aria-label="Close message">×</button>
         `;
+
+        // Add event listener instead of inline onclick
+        const closeButton = thankYouBanner.querySelector('.close-thank-you');
+        if (closeButton) {
+            closeButton.addEventListener('click', () => thankYouBanner.remove());
+        }
         
         // Add animation
         const style = document.createElement('style');
@@ -146,14 +178,14 @@ function checkReturningSupporter() {
 
 // Sacred Reciprocity Reminder
 function showSacredReciprocityReminder() {
-    const lastReminder = localStorage.getItem('last_kofi_reminder');
+    const lastReminder = safeStorage.getItem('last_kofi_reminder');
     const now = Date.now();
     const oneWeek = 7 * 24 * 60 * 60 * 1000;
-    
+
     if (!lastReminder || (now - parseInt(lastReminder)) > oneWeek) {
         // User has been on site for 5+ minutes
         setTimeout(() => {
-            if (!localStorage.getItem('is_kofi_supporter')) {
+            if (!safeStorage.getItem('is_kofi_supporter')) {
                 const reminder = document.createElement('div');
                 reminder.style.cssText = `
                     position: fixed;
@@ -175,20 +207,34 @@ function showSacredReciprocityReminder() {
                         Even a single coffee helps sustain this work.
                     </p>
                     <div style="display: flex; gap: 10px;">
-                        <a href="https://ko-fi.com/luminousdynamics" target="_blank"
-                           onclick="trackKofiEvent('click', 'reminder_support', 1)"
-                           style="flex: 1; background: #667eea; color: white; padding: 8px; 
+                        <a href="https://ko-fi.com/luminousdynamics" target="_blank" class="reminder-support-link"
+                           style="flex: 1; background: #667eea; color: white; padding: 8px;
                                   border-radius: 8px; text-align: center; text-decoration: none;">
                             Support Now
                         </a>
-                        <button onclick="this.parentElement.parentElement.remove(); 
-                                       localStorage.setItem('last_kofi_reminder', Date.now())"
-                                style="flex: 1; background: #f0f0f0; border: none; 
-                                       border-radius: 8px; cursor: pointer;">
+                        <button class="reminder-dismiss-button"
+                                style="flex: 1; background: #f0f0f0; border: none;
+                                       border-radius: 8px; cursor: pointer;" aria-label="Dismiss reminder">
                             Maybe Later
                         </button>
                     </div>
                 `;
+
+                // Add event listeners instead of inline handlers
+                const supportLink = reminder.querySelector('.reminder-support-link');
+                if (supportLink) {
+                    supportLink.addEventListener('click', () => {
+                        trackKofiEvent('click', 'reminder_support', 1);
+                    });
+                }
+
+                const dismissButton = reminder.querySelector('.reminder-dismiss-button');
+                if (dismissButton) {
+                    dismissButton.addEventListener('click', () => {
+                        reminder.remove();
+                        safeStorage.setItem('last_kofi_reminder', Date.now().toString());
+                    });
+                }
                 
                 // Add slide-in animation
                 const style = document.createElement('style');
@@ -232,9 +278,9 @@ document.addEventListener('DOMContentLoaded', function() {
 // Export functions for use in other scripts
 window.kofiIntegration = {
     trackEvent: trackKofiEvent,
-    markAsSupporter: () => localStorage.setItem('is_kofi_supporter', 'true'),
+    markAsSupporter: () => safeStorage.setItem('is_kofi_supporter', 'true'),
     updateSupporterCount: (count) => {
-        localStorage.setItem('supporter_count', count);
+        safeStorage.setItem('supporter_count', count.toString());
         displaySupporterCount();
     }
 };

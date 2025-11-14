@@ -1,5 +1,26 @@
 // Library reading experience enhancements
 
+// Safe localStorage wrapper with error handling
+const safeStore = {
+    getItem: (key) => {
+        try {
+            return localStorage.getItem(key);
+        } catch (e) {
+            console.warn('localStorage access failed:', e);
+            return null;
+        }
+    },
+    setItem: (key, value) => {
+        try {
+            localStorage.setItem(key, value);
+            return true;
+        } catch (e) {
+            console.warn('localStorage write failed:', e);
+            return false;
+        }
+    }
+};
+
 // Reading progress indicator
 function updateReadingProgress() {
     const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -12,24 +33,29 @@ function updateReadingProgress() {
     }
     
     // Save reading position
-    localStorage.setItem('library_scroll_position', scrollPosition);
+    safeStore.setItem('library_scroll_position', scrollPosition.toString());
 }
 
 // Scroll to top button visibility
 function updateScrollButton() {
     const scrollButton = document.querySelector('.scroll-to-top');
-    if (window.scrollY > 500) {
-        scrollButton.classList.add('visible');
-    } else {
-        scrollButton.classList.remove('visible');
+    if (scrollButton) {
+        if (window.scrollY > 500) {
+            scrollButton.classList.add('visible');
+        } else {
+            scrollButton.classList.remove('visible');
+        }
     }
 }
 
 // Restore reading position
 function restoreReadingPosition() {
-    const savedPosition = localStorage.getItem('library_scroll_position');
+    const savedPosition = safeStore.getItem('library_scroll_position');
     if (savedPosition && window.location.hash === '') {
-        window.scrollTo(0, parseInt(savedPosition));
+        const position = parseInt(savedPosition);
+        if (!isNaN(position)) {
+            window.scrollTo(0, position);
+        }
     }
 }
 
@@ -121,21 +147,52 @@ function addSectionAnchors() {
         anchor.addEventListener('click', (e) => {
             e.preventDefault();
             const url = `${window.location.origin}${window.location.pathname}#${header.id}`;
-            navigator.clipboard.writeText(url);
-            
-            // Show confirmation
-            const confirmation = document.createElement('span');
-            confirmation.textContent = ' Copied!';
-            confirmation.style.cssText = `
-                color: #00897B;
-                font-size: 0.8em;
-                margin-left: 10px;
-            `;
-            header.appendChild(confirmation);
-            
-            setTimeout(() => confirmation.remove(), 2000);
+
+            // Use clipboard API with fallback
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(url).then(() => {
+                    showCopyConfirmation(header);
+                }).catch((err) => {
+                    console.warn('Failed to copy link:', err);
+                    fallbackCopyToClipboard(url);
+                    showCopyConfirmation(header);
+                });
+            } else {
+                fallbackCopyToClipboard(url);
+                showCopyConfirmation(header);
+            }
         });
     });
+}
+
+// Helper function to show copy confirmation
+function showCopyConfirmation(header) {
+    const confirmation = document.createElement('span');
+    confirmation.textContent = ' Copied!';
+    confirmation.style.cssText = `
+        color: #00897B;
+        font-size: 0.8em;
+        margin-left: 10px;
+    `;
+    header.appendChild(confirmation);
+    setTimeout(() => confirmation.remove(), 2000);
+}
+
+// Fallback copy to clipboard for older browsers
+function fallbackCopyToClipboard(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-999999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+        document.execCommand('copy');
+    } catch (err) {
+        console.warn('Fallback: Could not copy text:', err);
+    }
+    document.body.removeChild(textArea);
 }
 
 // Reading mode toggle (zen mode)
@@ -163,34 +220,46 @@ function createZenModeToggle() {
     
     toggle.addEventListener('click', () => {
         zenMode = !zenMode;
-        
+
         if (zenMode) {
             document.body.classList.add('zen-mode');
             toggle.innerHTML = '📖 Normal Mode';
-            
-            // Hide navigation
-            document.querySelector('.library-nav').style.display = 'none';
-            
+
+            // Hide navigation if it exists
+            const nav = document.querySelector('.library-nav');
+            if (nav) {
+                nav.style.display = 'none';
+            }
+
             // Increase font size and spacing
-            document.querySelector('.library-content').style.cssText += `
-                font-size: 1.3rem;
-                line-height: 2;
-                max-width: 700px;
-                margin: 0 auto;
-            `;
-            
+            const content = document.querySelector('.library-content');
+            if (content) {
+                content.style.cssText += `
+                    font-size: 1.3rem;
+                    line-height: 2;
+                    max-width: 700px;
+                    margin: 0 auto;
+                `;
+            }
+
             // Dim background
             document.body.style.background = '#f5f5f5';
         } else {
             document.body.classList.remove('zen-mode');
             toggle.innerHTML = '🧘 Zen Mode';
-            
-            // Restore navigation
-            document.querySelector('.library-nav').style.display = 'flex';
-            
+
+            // Restore navigation if it exists
+            const nav = document.querySelector('.library-nav');
+            if (nav) {
+                nav.style.display = 'flex';
+            }
+
             // Restore normal text
-            document.querySelector('.library-content').style.cssText = '';
-            
+            const content = document.querySelector('.library-content');
+            if (content) {
+                content.style.cssText = '';
+            }
+
             // Restore background
             document.body.style.background = '';
         }
@@ -200,18 +269,23 @@ function createZenModeToggle() {
 // Track reading analytics (local only)
 function trackReading() {
     const startTime = Date.now();
-    
+
     window.addEventListener('beforeunload', () => {
-        const readingTime = Math.round((Date.now() - startTime) / 1000); // seconds
-        const existingTime = parseInt(localStorage.getItem('library_total_reading_time') || '0');
-        localStorage.setItem('library_total_reading_time', existingTime + readingTime);
-        
-        // Track sections read
-        const sectionsViewed = JSON.parse(localStorage.getItem('library_sections_viewed') || '[]');
-        const currentSection = window.location.hash || 'main';
-        if (!sectionsViewed.includes(currentSection)) {
-            sectionsViewed.push(currentSection);
-            localStorage.setItem('library_sections_viewed', JSON.stringify(sectionsViewed));
+        try {
+            const readingTime = Math.round((Date.now() - startTime) / 1000); // seconds
+            const existingTime = parseInt(safeStore.getItem('library_total_reading_time') || '0');
+            safeStore.setItem('library_total_reading_time', (existingTime + readingTime).toString());
+
+            // Track sections read
+            const sectionsStr = safeStore.getItem('library_sections_viewed') || '[]';
+            const sectionsViewed = JSON.parse(sectionsStr);
+            const currentSection = window.location.hash || 'main';
+            if (!sectionsViewed.includes(currentSection)) {
+                sectionsViewed.push(currentSection);
+                safeStore.setItem('library_sections_viewed', JSON.stringify(sectionsViewed));
+            }
+        } catch (e) {
+            console.warn('Failed to track reading analytics:', e);
         }
     });
 }

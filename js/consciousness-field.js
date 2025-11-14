@@ -6,7 +6,9 @@ class ConsciousnessField {
         this.particles = [];
         this.mouseX = 0;
         this.mouseY = 0;
-        
+        this.animationId = null;
+        this.isVisible = true;
+
         this.init();
     }
     
@@ -36,9 +38,39 @@ class ConsciousnessField {
             this.mouseX = e.clientX;
             this.mouseY = e.clientY;
         });
-        
+
+        // Pause animation when not visible (performance optimization)
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    this.isVisible = entry.isIntersecting;
+                    if (this.isVisible && !this.animationId) {
+                        this.animate();
+                    }
+                });
+            });
+            observer.observe(this.canvas);
+        }
+
+        // Check for reduced motion preference
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (prefersReducedMotion.matches) {
+            // Don't start animation if user prefers reduced motion
+            return;
+        }
+
         // Start animation
         this.animate();
+    }
+
+    destroy() {
+        if (this.animationId) {
+            cancelAnimationFrame(this.animationId);
+            this.animationId = null;
+        }
+        if (this.canvas && this.canvas.parentNode) {
+            this.canvas.parentNode.removeChild(this.canvas);
+        }
     }
     
     resize() {
@@ -47,10 +79,16 @@ class ConsciousnessField {
     }
     
     animate() {
+        // Only animate if visible
+        if (!this.isVisible) {
+            this.animationId = null;
+            return;
+        }
+
         // Clear canvas with fade effect
         this.ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-        
+
         // Update and draw particles
         this.particles.forEach(particle => {
             // Mouse interaction
@@ -100,12 +138,22 @@ class ConsciousnessField {
                 }
             });
         });
-        
-        requestAnimationFrame(() => this.animate());
+
+        this.animationId = requestAnimationFrame(() => this.animate());
     }
 }
 
+// Store instance for cleanup
+let consciousnessFieldInstance = null;
+
 // Initialize on load
 document.addEventListener('DOMContentLoaded', () => {
-    new ConsciousnessField();
+    consciousnessFieldInstance = new ConsciousnessField();
+});
+
+// Cleanup on unload
+window.addEventListener('beforeunload', () => {
+    if (consciousnessFieldInstance) {
+        consciousnessFieldInstance.destroy();
+    }
 });

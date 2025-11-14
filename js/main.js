@@ -3,18 +3,43 @@
 // Sacred Number: Golden Ratio
 const PHI = 1.618;
 
-// Smooth scroll for navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
+// Smooth scroll for navigation (only if not already handled in page)
+document.addEventListener('DOMContentLoaded', () => {
+    const anchors = document.querySelectorAll('a[href^="#"]');
+    if (anchors.length > 0) {
+        anchors.forEach(anchor => {
+            // Check if this anchor already has a click listener
+            if (!anchor.dataset.smoothScrollAttached) {
+                anchor.dataset.smoothScrollAttached = 'true';
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href && href !== '#') {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            // Close mobile nav if open
+                            const navLinks = document.getElementById('navLinks');
+                            if (navLinks) {
+                                navLinks.classList.remove('active');
+                                const toggleButton = document.querySelector('.mobile-nav-toggle');
+                                if (toggleButton) {
+                                    toggleButton.setAttribute('aria-expanded', 'false');
+                                }
+                            }
+
+                            // Smooth scroll with offset for fixed nav
+                            const navHeight = document.querySelector('.main-nav')?.offsetHeight || 60;
+                            const targetPosition = target.offsetTop - navHeight - 20;
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            }
+        });
+    }
 });
 
 // Harmony Cards Interactive Glow
@@ -142,8 +167,8 @@ style.textContent = `
             width: 200px;
             height: 200px;
             border-color: rgba(255, 215, 0, 0);
-            left: calc(50% - 100px);
-            top: calc(50% - 100px);
+            margin-left: -90px;
+            margin-top: -90px;
         }
     }
     
@@ -178,12 +203,33 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// Safe localStorage wrapper with error handling
+const safeLocalStorage = {
+    getItem: (key) => {
+        try {
+            return localStorage.getItem(key);
+        } catch (e) {
+            console.warn('localStorage getItem failed:', e);
+            return null;
+        }
+    },
+    setItem: (key, value) => {
+        try {
+            localStorage.setItem(key, value);
+            return true;
+        } catch (e) {
+            console.warn('localStorage setItem failed:', e);
+            return false;
+        }
+    }
+};
+
 // Track visit for personalization (Sacred Memory)
 function rememberVisitor() {
-    const visits = parseInt(localStorage.getItem('erc_visits') || '0') + 1;
-    localStorage.setItem('erc_visits', visits);
-    localStorage.setItem('erc_last_visit', new Date().toISOString());
-    
+    const visits = parseInt(safeLocalStorage.getItem('erc_visits') || '0') + 1;
+    safeLocalStorage.setItem('erc_visits', visits.toString());
+    safeLocalStorage.setItem('erc_last_visit', new Date().toISOString());
+
     // Personalize greeting for returning visitors
     if (visits > 1) {
         const heroContent = document.querySelector('.invitation');
