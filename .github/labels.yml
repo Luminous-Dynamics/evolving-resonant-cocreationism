@@ -1,0 +1,103 @@
+# GitHub Labels Configuration
+# Use with: https://github.com/crazy-max/ghaction-github-labeler
+
+# Type Labels
+- name: "bug"
+  color: "d73a4a"
+  description: "Something isn't working"
+
+- name: "enhancement"
+  color: "a2eeef"
+  description: "New feature or request"
+
+- name: "documentation"
+  color: "0075ca"
+  description: "Improvements or additions to documentation"
+
+- name: "question"
+  color: "d876e3"
+  description: "Further information is requested"
+
+# Priority Labels
+- name: "priority: critical"
+  color: "b60205"
+  description: "Critical priority"
+
+- name: "priority: high"
+  color: "d93f0b"
+  description: "High priority"
+
+- name: "priority: medium"
+  color: "fbca04"
+  description: "Medium priority"
+
+- name: "priority: low"
+  color: "0e8a16"
+  description: "Low priority"
+
+# Status Labels
+- name: "status: in progress"
+  color: "1d76db"
+  description: "Currently being worked on"
+
+- name: "status: blocked"
+  color: "000000"
+  description: "Blocked by dependencies"
+
+- name: "status: needs review"
+  color: "fbca04"
+  description: "Needs code review"
+
+- name: "status: ready"
+  color: "0e8a16"
+  description: "Ready to merge"
+
+# Category Labels
+- name: "accessibility"
+  color: "7057ff"
+  description: "Accessibility improvements"
+
+- name: "performance"
+  color: "1d76db"
+  description: "Performance optimization"
+
+- name: "security"
+  color: "ee0701"
+  description: "Security vulnerability or improvement"
+
+- name: "testing"
+  color: "bfd4f2"
+  description: "Testing related"
+
+- name: "design"
+  color: "f9d0c4"
+  description: "Design and UX"
+
+- name: "philosophy"
+  color: "d4c5f9"
+  description: "Philosophy and content"
+
+# Special Labels
+- name: "good first issue"
+  color: "7057ff"
+  description: "Good for newcomers"
+
+- name: "help wanted"
+  color: "008672"
+  description: "Extra attention is needed"
+
+- name: "duplicate"
+  color: "cfd3d7"
+  description: "This issue or pull request already exists"
+
+- name: "invalid"
+  color: "e4e669"
+  description: "This doesn't seem right"
+
+- name: "wontfix"
+  color: "ffffff"
+  description: "This will not be worked on"
+
+- name: "consciousness-first"
+  color: "ffd700"
+  description: "Embodies consciousness-first principles"
