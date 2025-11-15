@@ -7,10 +7,15 @@
 /test-results/
 /playwright-report/
 /playwright/.cache/
+*.spec.js.snap
+coverage/
+.nyc_output/
 
 # Build outputs
 /dist/
 /build/
+*.min.js
+*.min.css
 
 # Environment variables
 .env
@@ -18,14 +23,22 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.env*.local
 
 # Editor directories and files
-.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 .idea/
 *.swp
 *.swo
 *~
 .DS_Store
+.sublime-project
+.sublime-workspace
+*.code-workspace
 
 # Logs
 npm-debug.log*
@@ -33,18 +46,55 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+*.log
 
 # OS
 Thumbs.db
+Desktop.ini
+.Spotlight-V100
+.Trashes
+._*
 
 # Temporary files
 *.tmp
+*.bak
+*.backup
 .cache/
+.temp/
+temp/
 
 # Python
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
+.Python
+env/
+venv/
+ENV/
 
 # Local development
 .local/
+.history/
+
+# Package manager
+package-lock.json.bak
+yarn.lock.bak
+pnpm-lock.yaml.bak
+
+# Lighthouse
+.lighthouseci/
+
+# Screenshots (from manual testing)
+screenshots/
+*.png
+*.jpg
+*.jpeg
+!favicon.svg
+
+# Security
+*.pem
+*.key
+*.cert
+credentials.json
+secrets.json
