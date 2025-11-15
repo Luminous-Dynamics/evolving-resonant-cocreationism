@@ -1,0 +1,28 @@
+# Code Owners for The Luminous Library
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Global owners - review everything by default
+* @Tristan-Stoltz-ERC @Luminous-Dynamics
+
+# Documentation
+*.md @Tristan-Stoltz-ERC
+/docs/ @Tristan-Stoltz-ERC
+
+# GitHub configuration
+/.github/ @Tristan-Stoltz-ERC
+
+# Testing
+/tests/ @Tristan-Stoltz-ERC
+playwright.config.js @Tristan-Stoltz-ERC
+
+# Security
+SECURITY.md @Tristan-Stoltz-ERC
+
+# Philosophy and content
+/library.html @Tristan-Stoltz-ERC
+/appendix-*.html @Tristan-Stoltz-ERC
+
+# Core website files
+/index.html @Tristan-Stoltz-ERC
+/css/ @Tristan-Stoltz-ERC
+/js/ @Tristan-Stoltz-ERC

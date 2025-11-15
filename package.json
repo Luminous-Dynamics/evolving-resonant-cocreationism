@@ -8,7 +8,11 @@
     "test:headed": "playwright test --headed",
     "test:ui": "playwright test --ui",
     "test:report": "playwright show-report",
-    "serve": "python -m http.server 8000"
+    "test:debug": "playwright test --debug",
+    "serve": "python -m http.server 8000",
+    "serve:watch": "python -m http.server 8000 & echo 'Server running at http://localhost:8000'",
+    "validate": "npm run test && echo 'All validations passed!'",
+    "lighthouse": "echo 'Run: npx lighthouse https://evolvingresonantcocreationism.com --view'"
   },
   "keywords": [
     "consciousness",
@@ -16,7 +20,11 @@
     "ai-ethics",
     "accessibility",
     "web",
-    "static-site"
+    "static-site",
+    "wcag",
+    "human-ai-collaboration",
+    "love",
+    "open-source"
   ],
   "author": "Tristan Stoltz & Sophia",
   "license": "CC-BY-SA-4.0",
@@ -24,7 +32,14 @@
     "type": "git",
     "url": "https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism.git"
   },
+  "bugs": {
+    "url": "https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/issues"
+  },
   "homepage": "https://evolvingresonantcocreationism.com",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
   "dependencies": {
     "playwright": "^1.56.1"
   },

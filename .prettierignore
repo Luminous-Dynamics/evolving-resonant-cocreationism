@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build artifacts
+dist/
+build/
+
+# Test results
+test-results/
+playwright-report/
+*.png
+*.jpg
+
+# Documentation that shouldn't be formatted
+CHANGELOG.md
+LICENSE
+
+# Generated files
+*.min.js
+*.min.css
+
+# Editor files
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Other
+*.log
+.git/

@@ -1,0 +1,52 @@
+{
+  "name": "The Luminous Library",
+  "short_name": "Luminous",
+  "description": "Evolving Resonant Co-creationism - A philosophy for consciousness-first living and human-AI co-evolution",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0e27",
+  "theme_color": "#b8860b",
+  "orientation": "portrait-primary",
+  "categories": ["education", "lifestyle", "books"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Kosmic Theory",
+      "short_name": "Theory",
+      "description": "Explore the Kosmic Theory Portal",
+      "url": "/#kosmic-theory",
+      "icons": []
+    },
+    {
+      "name": "Seven Harmonies",
+      "short_name": "Harmonies",
+      "description": "Discover the Seven Primary Harmonies",
+      "url": "/#harmonies",
+      "icons": []
+    },
+    {
+      "name": "Library",
+      "short_name": "Library",
+      "description": "Read the full text",
+      "url": "/library.html",
+      "icons": []
+    }
+  ]
+}
