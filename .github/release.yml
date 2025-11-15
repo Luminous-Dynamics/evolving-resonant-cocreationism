@@ -1,0 +1,84 @@
+# GitHub Release Notes Configuration
+# Automatically categorizes pull requests in release notes
+
+changelog:
+  exclude:
+    labels:
+      - ignore-for-release
+      - duplicate
+      - invalid
+    authors:
+      - dependabot
+
+  categories:
+    - title: ✨ New Features
+      labels:
+        - enhancement
+        - feature
+        - new-feature
+
+    - title: 🐛 Bug Fixes
+      labels:
+        - bug
+        - bugfix
+        - fix
+
+    - title: 📚 Documentation
+      labels:
+        - documentation
+        - docs
+
+    - title: 🔒 Security
+      labels:
+        - security
+
+    - title: ♿ Accessibility
+      labels:
+        - accessibility
+        - a11y
+
+    - title: 🚀 Performance
+      labels:
+        - performance
+        - optimization
+
+    - title: 🧪 Testing
+      labels:
+        - testing
+        - test
+
+    - title: 💻 Developer Experience
+      labels:
+        - dx
+        - tooling
+        - build
+
+    - title: 🎨 Design & UI
+      labels:
+        - design
+        - ui
+        - ux
+
+    - title: 💜 Consciousness-First
+      labels:
+        - consciousness-first
+        - philosophy
+
+    - title: 🤝 Community
+      labels:
+        - community
+        - good-first-issue
+
+    - title: ⬆️ Dependencies
+      labels:
+        - dependencies
+
+    - title: 🔧 Maintenance
+      labels:
+        - maintenance
+        - chore
+        - refactor
+
+    - title: Other Changes
+      labels:
+        - "*"

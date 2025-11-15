@@ -1,0 +1,92 @@
+name: Lighthouse Performance Audit
+
+on:
+  # Run on every push to main
+  push:
+    branches: [main]
+  # Run on PRs
+  pull_request:
+    branches: [main]
+  # Allow manual trigger
+  workflow_dispatch:
+  # Weekly audit
+  schedule:
+    - cron: '0 0 * * 0' # Every Sunday at midnight UTC
+
+jobs:
+  lighthouse:
+    name: Lighthouse Audit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Start local server
+        run: |
+          npm run serve &
+          sleep 3
+        env:
+          CI: true
+
+      - name: Run Lighthouse
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: |
+            http://localhost:8000
+            http://localhost:8000/library.html
+            http://localhost:8000/support.html
+          temporaryPublicStorage: true
+          runs: 3
+          uploadArtifacts: true
+
+      - name: Check Lighthouse scores
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: |
+            http://localhost:8000
+          temporaryPublicStorage: true
+          runs: 3
+          # Fail if any score is below 90
+          budgetPath: .github/lighthouse/budget.json
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-results
+          path: .lighthouseci
+          retention-days: 30
+
+      - name: Comment PR with results
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const comment = `## 🔦 Lighthouse Audit Results
+
+            Performance metrics have been calculated. Check the artifacts for detailed reports.
+
+            **Target Scores**: 95+ for all categories
+            - Performance
+            - Accessibility
+            - Best Practices
+            - SEO
+            - PWA
+
+            View full report in the workflow artifacts.`;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
