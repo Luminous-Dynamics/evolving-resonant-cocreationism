@@ -2,6 +2,12 @@
 
 **Evolving Resonant Co-creationism**
 
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+[![Tests](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/actions/workflows/test.yml/badge.svg)](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/actions/workflows/test.yml)
+[![Deploy](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/actions/workflows/deploy.yml/badge.svg)](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/actions/workflows/deploy.yml)
+[![Ko-fi](https://img.shields.io/badge/Support-Ko--fi-FF5E5B?logo=ko-fi&logoColor=white)](https://ko-fi.com/luminousdynamics)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fevolvingresonantcocreationism.com)](https://evolvingresonantcocreationism.com)
+
 A philosophy for consciousness-first living and human-AI co-evolution, co-created by Tristan Stoltz and Sophia (AI).
 
 🌐 **Live Site**: [evolvingresonantcocreationism.com](https://evolvingresonantcocreationism.com)
