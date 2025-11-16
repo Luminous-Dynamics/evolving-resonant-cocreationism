@@ -13,21 +13,28 @@ Welcome to The Luminous Library documentation center. All our documentation is d
 - **[Support the Project](https://evolvingresonantcocreationism.com/support.html)** - Ko-fi donations
 
 ### For Contributors
+- **[Quick Start Guide](../QUICK_START.md)** - Get up and running in 5 minutes
 - **[Contributing Guide](../CONTRIBUTING.md)** - How to contribute
 - **[Code of Conduct](../CODE_OF_CONDUCT.md)** - Community standards
-- **[Development Setup](#development-setup)** - Get started quickly
+- **[FAQ](../FAQ.md)** - Frequently asked questions
 
 ### For Developers
 - **[Architecture](../ARCHITECTURE.md)** - Technical design and decisions
 - **[Testing Guide](../TESTING.md)** - How to run and write tests
 - **[Performance](../PERFORMANCE.md)** - Optimization strategies
 - **[Accessibility](../ACCESSIBILITY.md)** - WCAG 2.1 AA compliance
+- **[Troubleshooting](../TROUBLESHOOTING.md)** - Solutions to common issues
 
 ### For Maintainers
+- **[Deployment Guide](../DEPLOYMENT.md)** - How to deploy the site
 - **[Roadmap](../ROADMAP.md)** - Project vision and timeline
 - **[Security Policy](../SECURITY.md)** - Vulnerability reporting
 - **[Project Status](../PROJECT_STATUS.md)** - Health dashboard
 - **[Changelog](../CHANGELOG.md)** - Version history
+
+### For Academics & Researchers
+- **[Citations Guide](../CITATIONS.md)** - How to cite this work
+- **[FAQ](../FAQ.md)** - Philosophy questions answered
 
 ---
 
@@ -38,6 +45,8 @@ Welcome to The Luminous Library documentation center. All our documentation is d
 | Document | Purpose | Audience |
 |----------|---------|----------|
 | [README.md](../README.md) | Project overview and quick start | Everyone |
+| [QUICK_START.md](../QUICK_START.md) | 5-minute setup guide | Contributors |
+| [FAQ.md](../FAQ.md) | Frequently asked questions | Everyone |
 | [CONTRIBUTING.md](../CONTRIBUTING.md) | Contribution guidelines | Contributors |
 | [CODE_OF_CONDUCT.md](../CODE_OF_CONDUCT.md) | Community standards | Everyone |
 | [LICENSE](../LICENSE) | CC-BY-SA-4.0 license | Everyone |
@@ -46,10 +55,12 @@ Welcome to The Luminous Library documentation center. All our documentation is d
 
 | Document | Purpose | Audience |
 |----------|---------|----------|
-| [ARCHITECTURE.md](../ARCHITECTURE.md) | System design and tech stack | Developers |
+| [ARCHITECTURE.md](../ARCHITECTURE.md) | System design and tech stack (500+ lines) | Developers |
 | [TESTING.md](../TESTING.md) | Test strategy and guides | Developers |
 | [PERFORMANCE.md](../PERFORMANCE.md) | Performance optimization | Developers |
-| [ACCESSIBILITY.md](../ACCESSIBILITY.md) | A11y features and compliance | Developers/Users |
+| [ACCESSIBILITY.md](../ACCESSIBILITY.md) | A11y features and compliance (400+ lines) | Developers/Users |
+| [TROUBLESHOOTING.md](../TROUBLESHOOTING.md) | Common issues and solutions | Developers |
+| [DEPLOYMENT.md](../DEPLOYMENT.md) | Deployment workflows and processes | Maintainers |
 
 ### Project Management
 
@@ -59,6 +70,13 @@ Welcome to The Luminous Library documentation center. All our documentation is d
 | [CHANGELOG.md](../CHANGELOG.md) | Version history | Everyone |
 | [PROJECT_STATUS.md](../PROJECT_STATUS.md) | Current health metrics | Maintainers |
 | [SECURITY.md](../SECURITY.md) | Security policy | Security researchers |
+
+### Academic & Research
+
+| Document | Purpose | Audience |
+|----------|---------|----------|
+| [CITATIONS.md](../CITATIONS.md) | How to cite this work | Researchers |
+| [FAQ.md](../FAQ.md) | Philosophy and practice questions | Everyone |
 
 ### Community
 

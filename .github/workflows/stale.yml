@@ -1,0 +1,82 @@
+name: Manage Stale Issues and PRs
+
+on:
+  schedule:
+    # Run once per day at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v9
+        with:
+          # Number of days of inactivity before an issue becomes stale
+          days-before-stale: 60
+          # Number of days of inactivity before a stale issue is closed
+          days-before-close: 14
+          # Number of days of inactivity before a stale PR is closed
+          days-before-pr-close: 7
+
+          # Issue labels
+          stale-issue-label: 'stale'
+          exempt-issue-labels: 'pinned,good-first-issue,help-wanted,consciousness-first'
+
+          # PR labels
+          stale-pr-label: 'stale'
+          exempt-pr-labels: 'pinned,in-progress'
+
+          # Stale issue message
+          stale-issue-message: >
+            This issue has been automatically marked as stale because it has not had
+            recent activity. It will be closed in 14 days if no further activity occurs.
+
+
+            If this issue is still relevant, please comment to keep it open. Thank you
+            for your contributions! 💜
+
+          # Stale PR message
+          stale-pr-message: >
+            This pull request has been automatically marked as stale because it has not had
+            recent activity. It will be closed in 7 days if no further activity occurs.
+
+
+            If you're still working on this, please comment or push new commits to keep it open.
+            Thank you for your contribution! 💜
+
+          # Close issue message
+          close-issue-message: >
+            This issue was automatically closed due to inactivity. If you believe this issue
+            should remain open, please reopen it and provide an update. Thank you! 💜
+
+          # Close PR message
+          close-pr-message: >
+            This pull request was automatically closed due to inactivity. If you'd like to
+            continue working on this, please reopen or create a new PR. Thank you! 💜
+
+          # Only process issues, not PRs (set to true if you want to skip PRs)
+          only-issues: false
+
+          # Only process PRs, not issues
+          only-pr: false
+
+          # Remove stale label when updated
+          remove-stale-when-updated: true
+
+          # Mark as stale when only the stale label is removed
+          # remove-issue-stale-when-updated: true
+          # remove-pr-stale-when-updated: true
+
+          # Operations per run (prevent API rate limits)
+          operations-per-run: 30
+
+          # Debugging (set to true during setup, false in production)
+          debug-only: false
+
+          # Dry run mode (set to true to test without actually labeling/closing)
+          # dry-run: true
