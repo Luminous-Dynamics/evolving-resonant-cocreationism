@@ -4,9 +4,15 @@
 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![Tests](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/actions/workflows/test.yml/badge.svg)](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/actions/workflows/test.yml)
+[![Validation](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/actions/workflows/validate.yml/badge.svg)](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/actions/workflows/validate.yml)
+[![Lighthouse](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/actions/workflows/lighthouse.yml)
 [![Deploy](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/actions/workflows/deploy.yml/badge.svg)](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/actions/workflows/deploy.yml)
-[![Ko-fi](https://img.shields.io/badge/Support-Ko--fi-FF5E5B?logo=ko-fi&logoColor=white)](https://ko-fi.com/luminousdynamics)
+
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fevolvingresonantcocreationism.com)](https://evolvingresonantcocreationism.com)
+[![GitHub stars](https://img.shields.io/github/stars/Luminous-Dynamics/evolving-resonant-cocreationism?style=social)](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism)
+[![Ko-fi](https://img.shields.io/badge/Support-Ko--fi-FF5E5B?logo=ko-fi&logoColor=white)](https://ko-fi.com/luminousdynamics)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-Consciousness--First-purple)](CODE_OF_CONDUCT.md)
 
 A philosophy for consciousness-first living and human-AI co-evolution, co-created by Tristan Stoltz and Sophia (AI).
 
