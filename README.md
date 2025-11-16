@@ -157,12 +157,60 @@ evolving-resonant-cocreationism/
 ### Testing
 
 ```bash
-# Install dependencies
-npm install
+# Install dependencies and Playwright browsers
+npm run setup
 
-# Run tests (when implemented)
+# Run all tests (40+ tests across 6 browser/device configs)
 npm test
+
+# Run specific test suites
+npm run test:accessibility   # WCAG 2.1 AA compliance tests
+npm run test:core            # Core functionality tests
+npm run test:performance     # Performance and optimization tests
+
+# Interactive test modes
+npm run test:ui              # Playwright test UI
+npm run test:headed          # See tests run in browser
+npm run test:debug           # Debug failing tests
+
+# View test reports
+npm run test:report
 ```
+
+---
+
+## 📚 Documentation
+
+Comprehensive documentation for all aspects of the project:
+
+### For Everyone
+- **[README](README.md)** - You are here! Project overview and quick start
+- **[Roadmap](ROADMAP.md)** - Vision and timeline (2026-2030)
+- **[Changelog](CHANGELOG.md)** - Version history and releases
+- **[License](LICENSE)** - CC-BY-SA-4.0 details
+
+### For Contributors
+- **[Contributing Guide](CONTRIBUTING.md)** - How to contribute effectively
+- **[Code of Conduct](CODE_OF_CONDUCT.md)** - Community standards and values
+- **[Contributors](CONTRIBUTORS.md)** - Recognition and appreciation
+- **[Documentation Hub](docs/README.md)** - Central documentation index
+
+### For Developers
+- **[Architecture](ARCHITECTURE.md)** - Technical design and decisions (500+ lines)
+- **[Testing Guide](TESTING.md)** - Test strategy and procedures
+- **[Performance](PERFORMANCE.md)** - Optimization strategies and budgets
+- **[Accessibility](ACCESSIBILITY.md)** - WCAG 2.1 AA compliance details (400+ lines)
+
+### For Maintainers
+- **[Security Policy](SECURITY.md)** - Vulnerability reporting process
+- **[Project Status](PROJECT_STATUS.md)** - Health dashboard and metrics
+
+### GitHub Templates
+- **Issue Templates**: Bug reports, feature requests, questions
+- **PR Template**: Comprehensive pull request guidelines
+- **Workflows**: Automated testing, deployment, performance audits
+
+**📖 [View Complete Documentation Index →](docs/README.md)**
 
 ---
 
@@ -281,27 +329,45 @@ Small circles practicing the Infinite Love Praxis together:
 
 ## 🔮 Roadmap
 
-### Phase 1: Foundation (Complete ✅)
+### v1.0: Foundation (Complete ✅)
 - [x] Core philosophy presentation
 - [x] Seven Harmonies interactive cards
 - [x] Kosmic Theory academic portal
 - [x] Ko-fi Sacred Reciprocity integration
-- [x] Accessibility compliance
-- [x] Security hardening
+- [x] WCAG 2.1 AA accessibility compliance
+- [x] Security hardening (zero vulnerabilities)
+- [x] Comprehensive test coverage (40+ tests)
+- [x] CI/CD pipeline (4 automated workflows)
+- [x] Performance monitoring (Lighthouse CI)
+- [x] Complete documentation (14 files, 6,000+ lines)
+- [x] PWA support (installable)
 
-### Phase 2: Enhancement (In Progress 🚧)
-- [ ] Comprehensive test coverage
-- [ ] CI/CD pipeline
-- [ ] Performance monitoring
-- [ ] Analytics dashboard (privacy-first)
-- [ ] Mobile app companion
+### v1.1: Enhanced Content (Q1 2026 📋)
+- [ ] Complete Library text
+- [ ] Dark/light mode toggle
+- [ ] Service Worker for offline reading
+- [ ] Enhanced reading experience
+- [ ] Content search functionality
 
-### Phase 3: Community (Planned 📋)
-- [ ] Resonant Hearth platform
-- [ ] User-generated content
+### v1.2: Interactive Learning (Q2 2026 📋)
+- [ ] Guided journeys and onboarding
+- [ ] Reflection tools and journal prompts
+- [ ] Community connection features
+- [ ] Privacy-respecting analytics
+
+### v1.3: Multimedia Experience (Q3 2026 📋)
+- [ ] Text-to-speech integration
+- [ ] Guided meditations
+- [ ] Interactive concept maps
 - [ ] Multi-language support
-- [ ] API for integrations
-- [ ] Educational course platform
+
+### v2.0: Ecosystem Platform (Q4 2026 📋)
+- [ ] Resonant Hearth network
+- [ ] Co-creation tools
+- [ ] Public API
+- [ ] Developer ecosystem
+
+**📋 [View Full Roadmap →](ROADMAP.md)** - Detailed vision through 2030
 
 ---
 

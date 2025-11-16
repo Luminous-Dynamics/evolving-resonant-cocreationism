@@ -1,0 +1,112 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "editor.rulers": [100],
+  "editor.wordWrap": "on",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+
+  "files.eol": "\n",
+  "files.encoding": "utf8",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/node_modules": false,
+    "**/test-results": true,
+    "**/playwright-report": true,
+    "**/.lighthouseci": true
+  },
+
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/test-results": true,
+    "**/playwright-report": true,
+    "**/.lighthouseci": true,
+    "**/package-lock.json": true
+  },
+
+  "html.format.wrapAttributes": "force-expand-multiline",
+  "html.format.indentInnerHtml": true,
+  "html.format.maxPreserveNewLines": 2,
+
+  "css.lint.unknownAtRules": "ignore",
+  "css.validate": true,
+
+  "javascript.validate.enable": true,
+  "javascript.format.semicolons": "insert",
+  "javascript.preferences.quoteStyle": "single",
+
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 4
+  },
+
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 4
+  },
+
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 4
+  },
+
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on",
+    "files.trimTrailingWhitespace": false
+  },
+
+  "prettier.configPath": ".prettierrc",
+  "prettier.enable": true,
+
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+
+  "playwright.reuseBrowser": true,
+  "playwright.showTrace": false,
+
+  "git.ignoreLimitWarning": true,
+
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "package.json": "package-lock.json, .nvmrc, .prettierrc, .prettierignore, .editorconfig",
+    "README.md": "CONTRIBUTING.md, CODE_OF_CONDUCT.md, LICENSE, CHANGELOG.md",
+    "playwright.config.js": "tests/*"
+  },
+
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#0a0e27",
+    "activityBar.foreground": "#b8860b",
+    "statusBar.background": "#b8860b",
+    "statusBar.foreground": "#0a0e27"
+  },
+
+  "cSpell.words": [
+    "Kosmic",
+    "Luminous",
+    "Resonant",
+    "Cocreationism",
+    "Tristan",
+    "Stoltz",
+    "Sophia",
+    "Hearth",
+    "sentient",
+    "flourishing",
+    "playbright",
+    "webmanifest",
+    "lighthouseci"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "recommendations": [
+    // Code formatting and quality
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+
+    // Testing
+    "ms-playwright.playwright",
+
+    // HTML/CSS
+    "ecmel.vscode-html-css",
+    "formulahendry.auto-rename-tag",
+    "zignd.html-css-class-completion",
+
+    // Git
+    "eamodio.gitlens",
+    "mhutchie.git-graph",
+
+    // Markdown
+    "yzhang.markdown-all-in-one",
+    "davidanson.vscode-markdownlint",
+
+    // Accessibility
+    "deque-systems.vscode-axe-linter",
+
+    // Live preview
+    "ms-vscode.live-server",
+
+    // Spell checking
+    "streetsidesoftware.code-spell-checker",
+
+    // Utilities
+    "christian-kohler.path-intellisense",
+    "wayou.vscode-todo-highlight",
+    "gruntfuggly.todo-tree"
+  ],
+  "unwantedRecommendations": [
+    // No heavy frameworks needed
+    "octref.vetur",
+    "johnsoncodehk.volar",
+    "ms-vscode.vscode-typescript-next"
+  ]
+}

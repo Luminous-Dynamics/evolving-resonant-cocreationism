@@ -3,73 +3,73 @@
     <!-- Main Pages -->
     <url>
         <loc>https://evolvingresonantcocreationism.com/</loc>
-        <lastmod>2025-09-13</lastmod>
+        <lastmod>2025-11-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
-    
+
     <url>
-        <loc>https://evolvingresonantcocreationism.com/library-full.html</loc>
-        <lastmod>2025-09-13</lastmod>
+        <loc>https://evolvingresonantcocreationism.com/library.html</loc>
+        <lastmod>2025-11-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
-    
+
     <url>
-        <loc>https://evolvingresonantcocreationism.com/treasury.html</loc>
-        <lastmod>2025-09-13</lastmod>
+        <loc>https://evolvingresonantcocreationism.com/support.html</loc>
+        <lastmod>2025-11-16</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
     </url>
-    
+
     <!-- Appendices -->
     <url>
         <loc>https://evolvingresonantcocreationism.com/appendix-lexicon.html</loc>
-        <lastmod>2025-09-13</lastmod>
+        <lastmod>2025-11-16</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
-    
+
     <url>
         <loc>https://evolvingresonantcocreationism.com/appendix-shadow-work.html</loc>
-        <lastmod>2025-09-13</lastmod>
+        <lastmod>2025-11-16</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
-    
+
     <url>
         <loc>https://evolvingresonantcocreationism.com/appendix-partnership.html</loc>
-        <lastmod>2025-09-13</lastmod>
+        <lastmod>2025-11-16</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
-    
+
     <url>
         <loc>https://evolvingresonantcocreationism.com/appendix-dissonance.html</loc>
-        <lastmod>2025-09-13</lastmod>
+        <lastmod>2025-11-16</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
-    
+
     <url>
         <loc>https://evolvingresonantcocreationism.com/appendix-resonance-circle.html</loc>
-        <lastmod>2025-09-13</lastmod>
+        <lastmod>2025-11-16</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
-    
+
     <url>
         <loc>https://evolvingresonantcocreationism.com/appendix-shield.html</loc>
-        <lastmod>2025-09-13</lastmod>
+        <lastmod>2025-11-16</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
-    
-    <!-- Support Page -->
+
+    <!-- Static Resources -->
     <url>
-        <loc>https://evolvingresonantcocreationism.com/support.html</loc>
-        <lastmod>2025-09-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <loc>https://evolvingresonantcocreationism.com/humans.txt</loc>
+        <lastmod>2025-11-16</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
     </url>
 </urlset>
