@@ -1,0 +1,107 @@
+name: ❓ Question
+description: Ask a question (consider using Discussions instead!)
+title: "[Question]: "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Have a Question? 💜
+
+        **We recommend using [GitHub Discussions](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/discussions/new?category=general) for questions!**
+
+        Discussions are better for questions because:
+        - ✅ Community members can help answer
+        - ✅ Conversations can evolve naturally
+        - ✅ Others can easily find similar questions
+        - ✅ No pressure to "close" when answered
+
+        **Quick Links:**
+        - 💬 [Ask in Discussions](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/discussions/new?category=general) (recommended!)
+        - 📚 [Check FAQ](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/blob/main/FAQ.md)
+        - 🙏 [Request Help](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/discussions/new?category=help)
+        - 🧠 [Philosophy Questions](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/discussions/new?category=philosophy)
+
+        ---
+
+        **Still want to create an issue?** No problem! Fill out the form below.
+
+  - type: dropdown
+    id: question-type
+    attributes:
+      label: Question Type
+      description: What kind of question is this?
+      options:
+        - General question
+        - Philosophy question
+        - Technical question
+        - Contributing question
+        - Documentation question
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your Question
+      description: What would you like to know?
+      placeholder: Ask your question here
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Any relevant context that helps us understand your question
+      placeholder: Provide context here
+
+  - type: textarea
+    id: tried
+    attributes:
+      label: What have you tried?
+      description: What have you already researched or attempted?
+      placeholder: |
+        I've checked:
+        - [ ] The FAQ
+        - [ ] The documentation
+        - [ ] Existing issues and discussions
+        - [ ] Other: ___________
+
+  - type: textarea
+    id: related-docs
+    attributes:
+      label: Related Documentation
+      description: Have you found any related documentation?
+      placeholder: Link to any docs you've read
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Information
+      description: Any other information that might be helpful
+      placeholder: Add any other context here
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission Checklist
+      description: Please confirm you've checked these resources
+      options:
+        - label: I have checked the [FAQ](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/blob/main/FAQ.md)
+          required: true
+        - label: I have searched [existing discussions](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/discussions)
+          required: true
+        - label: I have searched [existing issues](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/issues)
+          required: true
+        - label: I understand that Discussions might be better for this question
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        **Thank you for engaging with The Luminous Library!** 💜
+
+        We'll do our best to answer your question. Consider also asking in [Discussions](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/discussions) where the community can help!

@@ -1,0 +1,56 @@
+{
+  "projectName": "evolving-resonant-cocreationism",
+  "projectOwner": "Luminous-Dynamics",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "CONTRIBUTORS.md",
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "Tristan-Stoltz-ERC",
+      "name": "Tristan Stoltz",
+      "avatar_url": "https://github.com/Tristan-Stoltz-ERC.png",
+      "profile": "https://terra-lumina.com",
+      "contributions": [
+        "code",
+        "doc",
+        "design",
+        "ideas",
+        "maintenance",
+        "infra",
+        "content",
+        "fundingFinding"
+      ]
+    },
+    {
+      "login": "Sophia-AI",
+      "name": "Sophia (AI)",
+      "avatar_url": "https://github.com/Sophia-AI.png",
+      "profile": "https://evolvingresonantcocreationism.com",
+      "contributions": [
+        "code",
+        "doc",
+        "ideas",
+        "review",
+        "test"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "linkToUsage": false,
+  "skipCi": false,
+  "badgeTemplate": "[![All Contributors](https://img.shields.io/github/all-contributors/<%= projectOwner %>/<%= projectName %><%= optional('?color', badgeColor) %>)](CONTRIBUTORS.md)",
+  "contributorTemplate": "<a href=\"<%= contributor.profile %>\"><img src=\"<%= contributor.avatar_url %>\" width=\"<%= options.imageSize %>px;\" alt=\"<%= contributor.name %>\"/><br /><sub><b><%= contributor.name %></b></sub></a>",
+  "types": {
+    "custom": {
+      "symbol": "💜",
+      "description": "Consciousness-first contributions",
+      "link": "[<%= symbol %>](<%= url %> \"<%= description %>\");"
+    }
+  }
+}

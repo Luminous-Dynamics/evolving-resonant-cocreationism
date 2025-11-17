@@ -1,0 +1,166 @@
+name: 🐛 Bug Report
+description: Report a bug to help us improve The Luminous Library
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Thank you for reporting a bug! 🙏
+
+        Your feedback helps make The Luminous Library better for everyone.
+
+        **Before submitting:**
+        - Check the [Troubleshooting Guide](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/blob/main/TROUBLESHOOTING.md)
+        - Search [existing issues](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/issues)
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of the bug
+      placeholder: Tell us what went wrong
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce this bug?
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Scroll down to '...'
+        4. See error
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+      placeholder: Describe the expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened?
+      placeholder: Describe what actually happened
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      description: Which browser are you using?
+      options:
+        - Chrome/Chromium
+        - Firefox
+        - Safari
+        - Edge
+        - Opera
+        - Brave
+        - Other (please specify in additional context)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      description: Which operating system are you using?
+      options:
+        - macOS
+        - Windows
+        - Linux
+        - iOS
+        - Android
+        - Other (please specify in additional context)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device Type
+      description: What device are you using?
+      options:
+        - Desktop/Laptop
+        - Mobile Phone
+        - Tablet
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: console-errors
+    attributes:
+      label: Console Errors
+      description: If applicable, paste any console errors (F12 → Console tab)
+      placeholder: Paste console errors here
+      render: shell
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots by dragging and dropping images here
+      placeholder: Drag and drop screenshots here
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other information that might help us understand the issue
+      placeholder: Add any other context about the problem here
+
+  - type: textarea
+    id: possible-solution
+    attributes:
+      label: Possible Solution (Optional)
+      description: If you have ideas about what might fix this, share them!
+      placeholder: Optional: suggest a fix or reason for the bug
+
+  - type: checkboxes
+    id: accessibility
+    attributes:
+      label: Accessibility Impact
+      description: Does this bug affect accessibility?
+      options:
+        - label: This bug affects keyboard navigation
+        - label: This bug affects screen readers
+        - label: This bug affects color contrast or visibility
+        - label: This bug affects users with reduced motion preferences
+        - label: No accessibility impact
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission Checklist
+      description: Please confirm you've completed these steps
+      options:
+        - label: I have checked the [Troubleshooting Guide](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/blob/main/TROUBLESHOOTING.md)
+          required: true
+        - label: I have searched [existing issues](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/issues) for duplicates
+          required: true
+        - label: I have included all requested information
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        **Thank you for helping improve The Luminous Library!** 💜
+
+        We'll review your bug report and respond as soon as possible.

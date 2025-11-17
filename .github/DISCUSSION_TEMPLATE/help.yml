@@ -1,0 +1,53 @@
+title: "[Help] "
+labels: ["help wanted", "question"]
+body: |
+  ## 🙏 Request for Help
+
+  We're here to support you! Share what you need help with.
+
+  ---
+
+  ### What do you need help with?
+
+  <!-- Describe your question or issue -->
+
+  ---
+
+  ### What have you tried so far?
+
+  <!-- This helps us understand where you're at and avoid repeating steps -->
+
+  ---
+
+  ### Environment (if technical issue)
+
+  <!-- Delete this section if not applicable -->
+
+  - **Operating System**: <!-- e.g., macOS 14.0, Windows 11, Ubuntu 22.04 -->
+  - **Browser**: <!-- e.g., Chrome 120, Firefox 121, Safari 17 -->
+  - **Node.js version** (if developing): <!-- Run: node --version -->
+  - **npm version** (if developing): <!-- Run: npm --version -->
+
+  ---
+
+  ### Error Messages or Screenshots (Optional)
+
+  <!-- Paste error messages or attach screenshots if helpful -->
+
+  ```
+  [Paste error messages here]
+  ```
+
+  ---
+
+  **Before posting, have you:**
+  - [ ] Checked the [FAQ](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/blob/main/FAQ.md)?
+  - [ ] Looked at [TROUBLESHOOTING.md](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/blob/main/TROUBLESHOOTING.md)?
+  - [ ] Searched [existing discussions](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/discussions)?
+  - [ ] Searched [existing issues](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/issues)?
+
+  **For bugs**: Please use the [Bug Report template](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/issues/new?template=bug_report.md) instead
+
+  **Need immediate support?** See [SUPPORT.md](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/blob/main/SUPPORT.md)
+
+  💜 *You're never alone on this journey*

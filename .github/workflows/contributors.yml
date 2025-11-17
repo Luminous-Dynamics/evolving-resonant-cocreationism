@@ -1,0 +1,87 @@
+name: Recognize Contributors
+
+on:
+  issues:
+    types: [opened, edited]
+  pull_request_target:
+    types: [opened, edited, closed]
+  issue_comment:
+    types: [created, edited]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  add-contributors:
+    runs-on: ubuntu-latest
+    if: ${{ !github.event.issue.pull_request }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: All Contributors
+        uses: all-contributors/all-contributors@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # Add comment to remind maintainers to recognize contributors
+  recognize-pr-author:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request_target' && github.event.action == 'closed' && github.event.pull_request.merged == true
+    steps:
+      - name: Comment on merged PR
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const pr = context.payload.pull_request;
+            const author = pr.user.login;
+
+            const comment = `## 💜 Thank you @${author}!
+
+            Your contribution has been merged! 🎉
+
+            **Don't forget to add yourself as a contributor:**
+
+            Comment on this PR with:
+            \`\`\`
+            @all-contributors please add @${author} for [contribution-type]
+            \`\`\`
+
+            **Contribution types:**
+            - 💻 \`code\` - Code contributions
+            - 📖 \`doc\` - Documentation
+            - 🐛 \`bug\` - Bug reports
+            - 💡 \`ideas\` - Ideas & planning
+            - 🎨 \`design\` - Design
+            - ♿ \`a11y\` - Accessibility
+            - 🧪 \`test\` - Testing
+            - 🤔 \`question\` - Answering questions
+            - 👀 \`review\` - Code review
+            - 🌍 \`translation\` - Translation
+            - 📢 \`talk\` - Talks
+            - 📹 \`video\` - Videos
+            - 📝 \`blog\` - Blog posts
+            - 🔧 \`tool\` - Tools
+            - 🚇 \`infra\` - Infrastructure
+            - 🚧 \`maintenance\` - Maintenance
+            - 💬 \`community\` - Community building
+
+            See [all contribution types](https://allcontributors.org/docs/en/emoji-key).
+
+            **Example:**
+            \`@all-contributors please add @${author} for code, doc, and test\`
+
+            ---
+
+            *You can also add contributors by commenting on any issue or PR with the command above.*
+            `;
+
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr.number,
+              body: comment
+            });

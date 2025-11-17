@@ -1,0 +1,182 @@
+name: ✨ Feature Request
+description: Suggest a new feature or improvement for The Luminous Library
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Thank you for sharing your vision! ✨
+
+        Your ideas help The Luminous Library evolve and flourish.
+
+        **Before submitting:**
+        - Check the [Roadmap](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/blob/main/ROADMAP.md) to see if this is already planned
+        - Search [existing feature requests](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/issues?q=label%3Aenhancement)
+        - Consider starting a [Discussion](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/discussions/new?category=ideas) to explore the idea first
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Feature Description
+      description: A clear and concise description of the feature you'd like
+      placeholder: Describe the feature
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or Need
+      description: What problem does this solve? What need does it address?
+      placeholder: Explain the problem or opportunity this feature would address
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe how you envision this feature working
+      placeholder: Explain your proposed solution
+    validations:
+      required: true
+
+  - type: textarea
+    id: consciousness-alignment
+    attributes:
+      label: Consciousness-First Alignment
+      description: How does this serve the flourishing of consciousness?
+      placeholder: Explain how this aligns with our consciousness-first principles
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: values-alignment
+    attributes:
+      label: Which consciousness-first values does this embody?
+      description: Select all that apply
+      options:
+        - label: Accessibility (makes the site more accessible)
+        - label: Pan-Sentient Flourishing (supports wellbeing of all users)
+        - label: Privacy & Autonomy (respects user privacy and choice)
+        - label: Wisdom & Understanding (deepens learning or insight)
+        - label: Community & Connection (strengthens relationships)
+        - label: Simplicity & Clarity (reduces complexity)
+        - label: Joy & Play (enhances delight and engagement)
+
+  - type: dropdown
+    id: user-type
+    attributes:
+      label: Who would benefit most from this feature?
+      description: Select the primary beneficiaries
+      options:
+        - All users
+        - First-time visitors
+        - Returning users
+        - Contributors
+        - Developers
+        - Researchers/academics
+        - Mobile users
+        - Users with disabilities
+        - Other (specify in additional context)
+    validations:
+      required: true
+
+  - type: textarea
+    id: benefits
+    attributes:
+      label: Expected Benefits
+      description: What benefits would this feature provide?
+      placeholder: |
+        - Benefit 1
+        - Benefit 2
+        - Benefit 3
+      value: |
+        -
+        -
+        -
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative Solutions
+      description: Have you considered any alternative approaches?
+      placeholder: Describe alternative solutions you've considered
+
+  - type: textarea
+    id: drawbacks
+    attributes:
+      label: Potential Drawbacks or Challenges
+      description: Are there any potential downsides or implementation challenges?
+      placeholder: Consider complexity, maintenance, performance, accessibility, etc.
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples or References
+      description: Links to similar features on other sites, mockups, or visual references
+      placeholder: Add links, mockups, or describe examples
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Implementation Notes (Optional)
+      description: Technical considerations or implementation suggestions (if you have them)
+      placeholder: Optional technical details or suggestions
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: How important is this to you?
+      description: This helps us prioritize features
+      options:
+        - Critical - I can't use the site effectively without it
+        - High - Would significantly improve my experience
+        - Medium - Nice to have, would use if available
+        - Low - Just an idea, not urgent
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other information that might be helpful
+      placeholder: Screenshots, mockups, related links, etc.
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: Would you be interested in helping implement this?
+      options:
+        - label: I'd be willing to contribute code for this feature
+        - label: I'd be willing to help test this feature
+        - label: I'd be willing to help document this feature
+        - label: I'd like to contribute but need guidance
+        - label: I'm just suggesting the idea
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission Checklist
+      description: Please confirm you've completed these steps
+      options:
+        - label: I have checked the [Roadmap](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/blob/main/ROADMAP.md)
+          required: true
+        - label: I have searched [existing feature requests](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/issues?q=label%3Aenhancement)
+          required: true
+        - label: This feature aligns with consciousness-first principles
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        **Thank you for helping evolve The Luminous Library!** 💜
+
+        We'll review your feature request and respond as soon as possible. Consider joining the discussion in our [GitHub Discussions](https://github.com/Luminous-Dynamics/evolving-resonant-cocreationism/discussions) to explore this idea further!
