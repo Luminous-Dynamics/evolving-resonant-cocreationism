@@ -1,0 +1,97 @@
+/* Individual harmony detail pages (harmonies/*.html).
+   Referenced from index.html's <head> since the original site build but
+   never actually created -- filled in properly here, alongside the pages
+   themselves, rather than left as a 404. Extends main.css's existing
+   design tokens (--sacred-gold, --deep-purple, --harmony-gradient, etc.)
+   instead of introducing a new palette. */
+
+.harmony-hero {
+    background: var(--harmony-gradient);
+    color: var(--pure-white);
+    padding: 6rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.harmony-hero .harmony-number-badge {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 auto 1.5rem;
+    backdrop-filter: blur(6px);
+}
+
+.harmony-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+}
+
+.harmony-hero .harmony-love-essence {
+    font-size: 1.3rem;
+    font-style: italic;
+    opacity: 0.95;
+}
+
+.harmony-detail-content {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.harmony-detail-content .lede {
+    font-size: 1.25rem;
+    line-height: var(--phi);
+    color: var(--soft-black);
+    margin-bottom: 2rem;
+}
+
+.harmony-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 2rem 0;
+}
+
+.harmony-keywords .keyword {
+    background: rgba(102, 126, 234, 0.1);
+    color: var(--deep-purple);
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.harmony-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 2rem 3rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.harmony-nav a {
+    color: var(--cosmic-blue);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.harmony-nav a:hover {
+    color: var(--heart-pink);
+}
+
+@media (max-width: 600px) {
+    .harmony-hero h1 { font-size: 2.2rem; }
+    .harmony-detail-content { padding: 3rem 1.5rem; }
+}
